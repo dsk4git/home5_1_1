@@ -10,3 +10,11 @@ console.log("Среднее значение : " + AverageMark.toFixed(2));
 let myname = "Дмитрий";
 let message = "Привет, мир! Меня зовут " + myname;
 console.log(`${message}`);
+
+// Пример 3. Вывод значения выражения
+let x = 2;
+let y = 22;
+let z = 0;
+let result;
+result = x * y + 5 * z + x - 1;
+console.log("Значение выражения: " + result);
