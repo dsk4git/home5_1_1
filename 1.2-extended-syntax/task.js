@@ -88,6 +88,17 @@ function calculateDrinkTask(){
 
 function askDrink(name,dateOfBirthday){
     // код для задачи №3 писать здесь
-    //console.log(result)
-    //return result;
+    let currentYear = new Date().getFullYear(),
+        birthdayYear = dateOfBirthday.getFullYear(),
+        result = currentYear - birthdayYear;
+    console.log(currentYear, birthdayYear);
+
+    if (result > 18) {
+        console.log("Не желаете ли олд-фэшн, " + name + " ?");
+    }
+    else {
+        console.log("Сожалею, " + name + ", но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!");
+    }
+    console.log(result);
+    return result;
 }
