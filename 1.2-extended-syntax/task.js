@@ -1,4 +1,4 @@
-
+"use strict";
 
 function calculateQuadraticEquation(){
     let a = +window.a.value;
@@ -12,7 +12,42 @@ function calculateQuadraticEquation(){
 
 function getResult(a,b,c){
     // код для задачи №1 писать здесь
-    //return x;
+    let d = (Math.pow(b,2) - 4*a*c);
+    let DiskrSqrt;
+    let x;
+    if (d > 0) {
+        DiskrSqrt = Math.sqrt(d);
+        let x1 = ((-b + DiskrSqrt) / (2 * a)).toFixed(2);
+        let x2 = ((-b - DiskrSqrt) / (2 * a)).toFixed(2);
+        x = [x1,x2];
+    }
+    else if (d === 0) {
+            x1 = ((-b) / (2 * a)).toFixed(2);
+            x = [x1];
+    }
+    else {
+         x = ['нет решения'];
+    };
+    
+ /*   switch (d) {
+        case (d > 0):
+            DiskrSqrt = Math.sqrt(d);
+            let x1 = (-b + DiskrSqrt) / (2 * a);
+            let x2 = (-b - DiskrSqrt) / (2 * a);
+            x = [x1,x2];
+            console.log("1" + x);
+            break;
+        case (d === 0):
+            x1 = (-b) / (2 * a);
+            x = [x1];
+            console.log("2" + x);
+            break;
+        case diskriminant < 0:
+            console.log("3" + x);
+            break;
+    }*/
+    console.log(x);
+    return (x);
 }
 
 function calculateAverageRating(){
