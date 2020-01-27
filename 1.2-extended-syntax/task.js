@@ -58,7 +58,25 @@ function calculateAverageRating(){
 
 function getAverageMark(marks){
     // код для задачи №2 писать здесь
-    //return averageMark;
+    let MarksLength = marks.length,
+        limit = 5,
+        i = 0,
+        averageMark = 0,
+        countMarks = 0;
+
+    if (MarksLength > limit) {
+        console.log("Задано больше " + limit + " оценок !");
+        marks = marks.slice(0,limit);
+    }
+    else {
+        limit = marks.length;
+    }
+    while (i < limit) {
+        countMarks = countMarks + marks[i];
+        i++;
+    }
+    averageMark = (countMarks / limit);
+    return averageMark;
 }
 
 function calculateDrinkTask(){
