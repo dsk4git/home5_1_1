@@ -1,4 +1,5 @@
 "use strict";
+// Задание 1
 let rez;
 
 function getSolutions(a,b,c){
@@ -65,6 +66,62 @@ function showSolutionsMessage(a,b,c){
 //    return(x);
 }
 
-rez = showSolutionsMessage(2,-3,-2);
-rez = showSolutionsMessage(2,4,2);
-rez = showSolutionsMessage(2,3,2);
+//rez = showSolutionsMessage(2,-3,-2);
+//rez = showSolutionsMessage(2,4,2);
+//rez = showSolutionsMessage(2,3,2);
+
+// Задание 2
+
+let data = new Object(), dataRez = new Object();
+
+data = {algebra: [5,5,5,5,5,5,5,5,5,5,5,5],
+        geometry: [4,5,4,5,4,5],
+        russian: [3,3,4,5],
+        physics: [5,5],
+        music: [2,2,3],
+        english: [4,4,3],
+        poetry: [5,3,4],
+        chemistry: [2,4,4,4,4,4,4,4],
+        french: [4,4],
+        biology: [4,3,5,4]
+}
+
+let index, key, mark = 0, sum = 0, avg = 0, i = 0,
+    countSubjects = 0, totalAverageMarks = 0,
+    value = new Object(); 
+
+function getAverageScore(data){
+
+    for (index in data){
+        value = data[index];
+        countSubjects = countSubjects + 1;
+
+        getAverageArray(value);
+
+        totalAverageMarks = totalAverageMarks + avg;
+        dataRez[index] = avg;
+    }
+    if (countSubjects < 10){
+    // Выполнить действия для случая количества предметов в объекте data менее 10
+        console.log("Количество предметов в объекте data менее 10 !");
+    }
+    dataRez["average"] = (totalAverageMarks / countSubjects);
+    return (dataRez);
+}
+
+function getAverageArray(value1){
+// Подсчет среднего в массиве
+i = 0;
+sum = 0;
+mark = 0;
+for (key in value1) {
+    mark = mark + value1[key];
+    i = i + 1;
+}
+    sum = mark;
+    avg = sum / i;
+    return(avg);
+}
+
+getAverageScore(data);
+console.log(dataRez);
