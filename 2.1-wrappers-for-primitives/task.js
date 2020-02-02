@@ -82,5 +82,44 @@ function sayHello() {
 
 function getGreeting(name) {
     // код для задачи №2 писать здесь
-    //return greeting;
+    let greeting = "";
+
+    switch (typeof name) {
+        case 'string':
+            if (Number(name) === 0){
+                greeting = "Пустое поле недопустимо!";
+                console.log(greeting);
+                break;
+            }
+            if (name.slice(0,2) === "\"\""){
+                greeting = "Привет, мир! Меня зовут Аноним.";
+                console.log(greeting);
+                break;
+            }
+            if (name.slice(0,1) === ""){
+                greeting = "Привет, мир! Меня зовут Аноним.";
+                console.log(greeting);
+                break;
+            }
+            if ((name === "null") || (name === "undefined")){
+                greeting = "Привет, мир! Меня зовут  Аноним.";
+                console.log(greeting);
+                break;
+            }
+            greeting = `Привет, мир! Меня зовут ${name}.`;
+            console.log(`Привет, мир! Меня зовут ${name}.`);
+            break;
+        case 'undefined':
+            greeting = "Привет, мир! Меня зовут Аноним.";
+            console.log(greeting);
+            break;
+          case NaN:
+            greeting = "";
+            console.log("Проверьте правильность ввода имени. Должна быть строка");
+            break;
+        default:
+            break;
+    }
+
+    return greeting;
 }
